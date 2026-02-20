@@ -1,0 +1,61 @@
+CREATE DATABASE ecommerce;
+
+-- Create Users Table
+CREATE TABLE ecommerce.Users (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
+);
+
+-- Create Admin Table
+CREATE TABLE ecommerce.Admin (
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    AdminName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Categories Table
+CREATE TABLE ecommerce.Categories (
+    CategoryID INT AUTO_INCREMENT PRIMARY KEY,
+    CategoryName VARCHAR(255) NOT NULL UNIQUE,
+    Description TEXT
+);
+
+-- Create Products Table
+CREATE TABLE ecommerce.Products (
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(255) NOT NULL,
+    Description TEXT,
+    Price DECIMAL(10, 2) NOT NULL,
+    Stock INT DEFAULT 0,
+    CategoryID INT,
+    Cover VARCHAR(255) NOT NULL, -- Path or URL to the product image
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (CategoryID) REFERENCES ecommerce.Categories(CategoryID) ON DELETE CASCADE
+);
+
+-- Create Payments Table without dependency on Orders Table
+CREATE TABLE ecommerce.Payments (
+    PaymentID INT AUTO_INCREMENT PRIMARY KEY,
+    PaymentMethod ENUM('CreditCard', 'DebitCard', 'CashOnDelivery') DEFAULT 'CashOnDelivery',
+    PaymentStatus ENUM('Pending', 'Completed', 'Failed') DEFAULT 'Pending',
+    PaidAmount DECIMAL(10, 2),
+    PaymentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Cart Table
+CREATE TABLE ecommerce.Cart (
+	UserID INT,
+    CartID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(255),
+    Price DECIMAL(10, 2),
+    Size VARCHAR(10),
+    Quantity INT,
+    Cover VARCHAR(255),
+    FOREIGN KEY (UserID) REFERENCES ecommerce.users(UserID) ON DELETE CASCADE
+);

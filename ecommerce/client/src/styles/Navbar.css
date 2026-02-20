@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oleo+Script:wght@400;700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+.nav{
+    font-family: 'Fredoka', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #F7FFF7;
+    color: #95A5A6;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 60px 0 60px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.nav.scrolled {
+    background: #FF6B6B;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s, color 0.3s, ease-in-out;
+}
+
+.nav.scrolled .nav-links a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav.scrolled .nav-links a:hover {
+    color: black;
+}
+
+.nav-links.scrolled a {
+    color: rgb(0, 0, 0);
+    transition: color 0.3s;
+}
+
+.nav.scrolled .logo {
+    color: #A0E7E5;
+    text-shadow: 2px 2px 0px #95A5A6;
+    transition: color 0.3s;
+}
+
+.nav-links{
+    display: flex;
+    gap: 60px;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    user-select: none;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  user-select: none;
+  transition: color 0.2s;
+} 
+
+.nav-links a:hover {
+    color: #FF6B6B;
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.logo{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out; 
+    color: #FF6B6B;
+    text-shadow: 2px 2px 0px #FFE66D;
+    position: absolute;
+    left: 47%;
+    user-select: none;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links li{
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.nav-links li:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #FF6B6B;
+}
+
+.nav.scrolled .nav-links li {
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav.scrolled .nav-links li:hover {
+    color: #000000;
+}
+
+.nav-links.scrolled li {
+    color: #95A5A6;
+    transition: color 0.3s;
+}
+
+.logo2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo2 h1 {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 8.5rem; /* Adjust size as needed */
+    background: linear-gradient(45deg, #0b136b, #f4e4c1); /* Gold gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* For gradient text effect */
+    text-transform: uppercase; /* Make it all caps like Gucci */
+    letter-spacing: 2px; /* Add some spacing between letters */
+    font-weight: 700; /* Bold text */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+}
+
+/* Cart Dropdown Styles */
+.cart-dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  color: #222;
+  min-width: 320px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.10);
+  border-radius: 12px;
+  padding: 20px 18px 16px 18px;
+  z-index: 2000;
+  animation: cartFadeIn 0.3s;
+}
+
+@keyframes cartFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cart-dropdown h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.cart-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cart-item span {
+  font-size: 1rem;
+  color: #333;
+}
+
+.cart-item span:last-child {
+  font-weight: 600;
+  color: #0b136b;
+  margin-left: auto;
+}
+
+.cart-count {
+  background: #e63946;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  margin-left: 6px;
+  font-weight: bold;
+  vertical-align: middle;
+  box-shadow: 0 1px 4px rgba(230,57,70,0.15);
+}
+
+.cart-dropdown button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px 0;
+  background: white;
+  box-shadow: 0 8px 8px rgba(11, 19, 107, 0.08), 0 1px 2px rgba(0,0,0,0.04);
+  color: black;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  
+}
+
+.cart-dropdown button:hover {
+  background: black;
+  transform: translateY(-2px) scale(1.03);
+  color: white;
+}
+
+.cart-dropdown > div {
+  margin-bottom: 8px;
+}
+
+.cart-dropdown .cart-item span {
+  margin-right: 8px;
+}
+
+.cart-dropdown .cart-item span:last-child {
+  margin-right: 0;
+}
+
+.cart-dropdown .cart-item div span:first-child {
+  font-weight: 500;
+}
+
+.cart-dropdown .cart-item div span:last-child {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.cart-dropdown .cart-item + .cart-item {
+  margin-top: 6px;
+}
+
+.cart-dropdown .cart-item {
+  background: #f9f9fc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+}
+
+.cart-dropdown .cart-item:last-child {
+  margin-bottom: 0;
+}
+
+.cart-dropdown > div:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b136b;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.cart-dropdown > div:first-child {
+  margin-bottom: 10px;
+}
+
+.nav.scrolled .cart-icon {
+  color: white;
+  stroke: white;
+  transition: color 0.3s, stroke 0.3s;
+}
+
+.cart-icon {
+  color: black;
+  stroke: black;
+  transition: color 0.3s, stroke 0.3s;
+}
+

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* Main auth container with background image */
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('../Resources/login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  padding: 2rem 1rem;
+  position: relative;
+  margin-top: 8vh;
+}
+
+/* Dark overlay for better readability */
+.auth::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Heading styling - WonderLand ToyStore style */
+.auth h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  text-align: center;
+  color: #FF6B6B;
+  text-shadow: 6px 6px 0px #FFE66D;
+  user-select: none;
+  z-index: 1;
+  position: relative;
+}
+
+/* Form styling with glass morphism */
+.auth form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid rgba(255, 255, 255, 0.7);
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
+  padding: 3rem 2.5rem;
+  border-radius: 30px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+/* Input fields styling */
+.auth form input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1.1rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth form input::placeholder {
+  color: #888;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.auth form input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: #FF6B6B;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Primary Register button - Liquid Glass Style */
+.auth form button {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #39b9a4;
+  border-radius: 25px;
+  border: none;
+  
+  /* Glass Base */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: 2px solid rgba(255, 255, 255, 0.8);
+  
+  /* Complex Shadows for Depth */
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 5px 10px rgba(255, 255, 255, 0.5),
+    inset 0 -5px 10px rgba(0, 0, 0, 0.05);
+    
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.auth form button:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 
+    0 25px 50px rgba(255, 107, 107, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.auth form button:active {
+  transform: scale(0.98);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Error and Success messages styling */
+.auth form p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-family: 'Fredoka', sans-serif;
+  padding: 0.75rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Link styling */
+.auth form span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.auth form span a {
+  color: #FFE66D;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.auth form span a:hover {
+  color: #FF6B6B;
+  text-decoration: underline;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .auth h1 {
+    font-size: 3rem;
+    text-shadow: 4px 4px 0px #FFE66D;
+  }
+
+  .auth form {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+  }
+
+  .auth form input, 
+  .auth form button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth h1 {
+    font-size: 2.5rem;
+  }
+}

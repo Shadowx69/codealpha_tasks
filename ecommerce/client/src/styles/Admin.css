@@ -1,0 +1,187 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Admin panel container */
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+  height: 130vh;
+  
+}
+
+/* Header styling */
+.admin-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 4vh;
+}
+
+.admin-header h1 {
+  font-size: 2.8rem;
+  color: black;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  user-select: none;
+}
+
+.admin-header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-header button {
+  background: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-header button.active {
+  background: #4be6cc;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-header button:hover {
+  background: #FF6B6B;
+  color: white;
+}
+
+.admin-header button:active {
+  transform: scale(0.95);
+}
+
+/* Tab content styling */
+.categories, .products, .orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.categories h2,
+.products h2,
+.orders h2 {
+  font-size: 2.3rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  border-bottom: 2px solid black;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+  
+}
+
+/* Form styling */
+form {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 0.3rem;
+  user-select: none;
+}
+
+form input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+form input:focus {
+  border-color: black;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+  background: #FF6B6B;
+  
+}
+
+form button:active {
+  transform: scale(0.95);
+}
+
+/* Message box styling */
+.message-box {
+  font-size: 1rem;
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+p.error {
+  color: red;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .admin-header nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .categories,
+  .products,
+  .orders {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+}
