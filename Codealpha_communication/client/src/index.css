@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8f4e6;
+  color: #022c22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Beautiful dynamic styles for WebRTC UI */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 300px;
+  background: #0f381c;
+  border-right: 1px solid #134e4a;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #022c22;
+}
+
+.video-grid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  padding: 16px;
+  background: #0f381c;
+  border-top: 1px solid #134e4a;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #134e4a;
+  color: #f8f4e6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #8aa18c;
+  color: #022c22;
+}
+
+.btn-primary {
+  background: #10b981;
+  color: #022c22;
+}
+
+.btn-primary:hover {
+  background: #059669;
+  color: #f8f4e6;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #f8f4e6;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  background: #134e4a;
+  border: 1px solid #8aa18c;
+  border-radius: 8px;
+  color: #f8f4e6;
+  margin-bottom: 12px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 8px;
+  background: #134e4a;
+}

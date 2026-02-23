@@ -1,0 +1,737 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oleo+Script:wght@400;700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+.home-container {
+    font-family: 'Fredoka', sans-serif;
+    background: #F7FFF7;
+    min-height: 100vh;
+    padding: 0;
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.image-slider {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1500px; /* Constrain the slider to a reasonable width */
+  height: 550px; /* Set a fixed height for the slider */
+  overflow: hidden; 
+  margin: 0 auto; /* Center the slider horizontally */
+  border-radius: 8px; /* Add a slight rounding to make it look modern */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
+  position: relative; /* Needed for overlay positioning */
+}
+
+/* Dark overlay for the image slider */
+.image-slider::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+   /* Adjust opacity as needed */
+  pointer-events: none; /* Allow clicks to pass through */
+  border-radius: 8px;
+}
+
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fit nicely within the container */
+  display: block;
+}
+
+.home-header {
+  background: #4f46e5;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  
+}
+
+.home-section1{
+  max-width: 1100px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.home-section2 {
+  max-width: 1100px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.home-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-cardC {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.1s ease;
+  text-decoration: none;
+}
+
+.home-cardC:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.image-slider img {
+  width: 100%; /* Ensure the image stretches to the full width of the container */
+  height: 100%; /* Make the image take up the full height of the container */
+  object-fit: cover; /* Ensures the image scales properly to fill the container without distortion */
+  border-radius: 8px; /* Retain the rounded corners */
+  display: block;
+  object-position: bottom;
+}
+.homeSec3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+    user-select: none;
+}
+
+/* Home Products */
+
+/* Main container for home products */
+.homProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width to 300px */
+    justify-content: center; /* Center the grid content */
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+/* Prevent single product from stretching full width */
+.homProducts:has(.product-card:only-child) {
+  justify-items: center;
+  grid-template-columns: 1fr; /* Simplified */
+}
+
+/* Individual product card */
+.product-card {
+    background-color: transparent; /* Transparent background */
+    border: none; /* Removed border */
+    border-radius: 0; /* Removed border radius */
+    box-shadow: none; /* Removed shadow */
+    padding: 0; /* Removed padding */
+    text-align: left; /* Left align text */
+    transition: none; /* Removed transition */
+    width: 100%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    position: relative;
+}
+
+/* Product card hover effect */
+.product-card:hover {
+  transform: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Image Wrapper for Overlay */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Fixed height for images */
+  border-radius: 20px; /* Rounded corners for image */
+  overflow: hidden;
+  background-color: #f0f0f0; /* Placeholder background */
+}
+
+/* Product image */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from cover to contain */
+  border-radius: 0; /* Radius handled by wrapper */
+  margin-bottom: 0;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay Styles */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.overlay-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 140px;
+  border-radius: 5px;
+}
+
+.overlay-btn:hover {
+  background: white;
+  color: black;
+}
+
+.overlay-btn:last-child {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.overlay-btn:last-child:hover {
+  background: white;
+  color: black;
+}
+
+/* Card Info */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0 5px;
+}
+
+/* Product title */
+.product-card h3 {
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+/* Product price */
+.product-card p {
+  font-weight: bold;
+  color: #000;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Remove old styles */
+.product-card p:last-of-type {
+  font-weight: normal;
+  color: inherit;
+  font-size: inherit;
+}
+
+.sec2l{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+.sec2r{
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+.sec2H{
+  font-size: 4rem;
+}
+.catD{
+  text-decoration: none;
+  color: black;
+}
+
+/* Why choose us section */
+
+.why-choose-us {
+  background-color: #f8fafc; /* Light background for a clean look */
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.sec2H {
+  font-size: 2.5rem;
+  color: black; /* Accent color for the heading */
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.why-choose-us-cards {
+  display: flex;
+  flex-wrap: wrap; /* Ensure it adapts for smaller screens */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.why-card {
+  background-color: #ffffff; /* Card background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 1.5rem;
+  max-width: 300px; /* Ensure consistent card size */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.why-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.why-card img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1rem;
+}
+
+.why-card h3 {
+  font-size: 1.5rem;
+  color: #111827; /* Dark text for good contrast */
+  margin: 0.5rem 0;
+}
+
+.why-card p {
+  font-size: 1rem;
+  color: #4b5563; /* Subtle gray text for descriptions */
+  margin: 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 600px; /* Added minimum height */
+  height: auto;
+  padding: 60px 0; /* Added padding for spacing */
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 0; /* Ensure stacking context so video stays visible */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-video {
+  display: none;
+}
+
+.hero h1{
+  font-family: 'Fredoka', sans-serif;
+  font-weight: bold;
+  font-size: 200px;
+  color: #FF6B6B;
+  text-shadow: 10px 10px 0px #FFE66D;
+}
+
+.heroimg{
+  width: 2000px;
+  height: 700px;
+  padding-left: 50px;
+  
+}
+.heror{
+  display: flex;
+  justify-content: flex-end;
+  width: 50vw;
+}
+
+.head h1 {
+  margin-bottom: 0;
+  line-height: 0.7;
+  position: relative;
+  left: 2vw;
+  user-select: none;
+}
+
+.head h1 + h1 {
+  margin-top: 0.2em; /* or 0 */
+}
+
+.h1n{
+  padding-left: 5vw;
+}
+.descript{
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.descript h2{
+  margin-bottom: 0;
+  line-height: 1.2;
+  position: relative;
+  left: 8vw;
+  margin-top: 10px;
+  user-select: none;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+}
+.descript p{
+  margin-bottom: 0;
+  line-height: 1.2;
+  position: relative;
+  left: 8vw;
+  margin-top: 10px;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+}
+.btnhome{
+  position: relative;
+  left: 125px;
+  top: 20px;
+}
+
+/* Liquid Glass Button - iOS 26 Style */
+.btn a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Changed from fixed 180px to auto */
+  min-width: 180px; /* Ensure minimum width */
+  padding: 0 30px; /* Add padding for longer text */
+  height: 65px;
+  text-decoration: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color:#39b9a4;
+  border-radius: 40px;
+  
+  /* Glass Base */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  
+  /* Complex Shadows for Depth */
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1), /* Drop shadow */
+    0 5px 15px rgba(0, 0, 0, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.2), /* Inner glow */
+    inset 0 5px 10px rgba(255, 255, 255, 0.5), /* Top highlight */
+    inset 0 -5px 10px rgba(0, 0, 0, 0.05); /* Bottom shade */
+    
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+/* The Liquid Blob */
+.btn a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 140%;
+  height: 250%;
+  /* background: radial-gradient(circle, #ffffff 100%, #cecaca 0%); */
+  opacity: 0.7;
+  filter: blur(25px);
+  z-index: -1;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 50%;
+}
+
+/* Glossy Reflection */
+.btn a::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Hover State */
+.btn a:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 
+    0 25px 50px rgba(255, 107, 107, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn a:hover::before {
+  transform: translate(-50%, -50%) scale(1.1) rotate(15deg);
+  opacity: 1;
+  filter: blur(15px);
+}
+
+.btn a:hover::after {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+/* Active State (Click) */
+.btn a:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.fade-text {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.fade-text.visible {
+  opacity: 1;
+}
+.moving-strip {
+  width: 100%;
+  overflow: hidden;
+  background-color: #A0E7E5;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  user-select: none;
+}
+
+
+.strip-content {
+  display: flex;
+  width: 200%; /*Content needs to be twice the width for infinite effect*/
+  user-select: none;
+  animation: infinite-scroll 20s linear infinite;
+  -webkit-animation: infinite-scroll 20s linear infinite;
+}
+
+.strip-content div {
+  display: flex;
+  white-space: nowrap;
+  flex: 1; /* Each part takes up equal width */
+}
+
+.strip-content span {
+  margin: 0 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.Section2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 30px;
+}
+.p111{
+  width: 300px;
+}
+.p222{
+  width: 250px;
+}
+
+.sec11 {
+    border: 2px solid black;
+    border-color: #cbd0d0;
+    border-radius: 30px;
+    background-color: #d3d6d8;
+    display: flex;
+    background-image: url("/src/Resources/dino.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 300px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sec12 {
+    border: 2px solid black;
+    border-color: #cbd0d0;
+    border-radius: 30px;
+    background-color: #d3d6d8;
+    display: flex;
+    background-image: url("/src/Resources/boyoncar.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 300px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sec21 {
+    border: 2px solid black;
+    border-color: #cbd0d0;
+    border-radius: 30px;
+    background-color: #d3d6d8;
+    display: flex;
+    width: 500px;
+    background-image: url("/src/Resources/car.jpg");
+    background-size: contain;
+    /* background-repeat: no-repeat;
+    background-position: right; */
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec22 {
+    border: 2px solid black;
+    border-color: #cbd0d0;
+    border-radius: 30px;
+    background-color: #d3d6d8;
+    display: flex;
+    width: 500px;
+    background-image: url("/src/Resources/largeno.jpg");
+    background-size: contain;
+    /* background-repeat: no-repeat;
+    background-position: right; */
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec2btn{
+  position: relative;
+  bottom: 15px;
+
+}
+
+/* Hero Bottom Section - New styles for bottom image */
+.hero-bottom-section {
+  width: 100%;
+  background-color: #F7FFF7; /* Same white background as page */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bottom-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.heroimg-bottom {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-bottom-container {
+    padding: 20px;
+  }
+  
+  .heroimg-bottom {
+    max-width: 100%;
+  }
+}
+
+.herol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  padding: 40px;
+  min-height: 500px; /* Ensure left content has proper height */
+}
+
